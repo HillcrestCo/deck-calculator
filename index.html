@@ -544,7 +544,10 @@ function estimate(matId){
   const delivery=M>0?state.delivery:0;
   const disposal=M>0?state.disposal:0;
   const struct=M*(state.structPct||0)/100;
-  const labor=M>0?(M/0.6-M):0;
+  /* Mano de obra: el pino lleva la misma mano de obra que el cedro —
+     el crew hace el mismo trabajo aunque la madera sea más barata. */
+  const laborBase=matId==="pine"?materialTotal("cedar").total:M;
+  const labor=laborBase>0?(laborBase/0.6-laborBase):0;
   return {M:M, tax:tax, delivery:delivery, disposal:disposal, struct:struct, labor:labor,
     total:M+tax+delivery+disposal+struct+labor, missing:mt.missing};
 }
