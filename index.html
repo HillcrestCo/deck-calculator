@@ -116,6 +116,11 @@
 
 <main>
   <div class="card">
+    <h2 id="clientH"></h2>
+    <input type="text" id="clientInput" placeholder="" autocomplete="off">
+  </div>
+
+  <div class="card">
     <h2 id="addrH"></h2>
     <div class="addr-wrap">
       <input type="text" id="addrInput" placeholder="" autocomplete="off">
@@ -228,6 +233,7 @@ appTitle:"Calculadora de Deck",
 priceNoteA:"Refacing de deck \u00b7 Precios base ",priceNoteB:" \u2014 Lowe's (compuesto), Menards (cedro y pino tratado). Toca cualquier precio para ajustarlo; se guarda en tu tel\u00e9fono.",
 tabComposite:"Compuesto",tabCedar:"Cedro",tabPine:"Pino trat.",
 addrH:"\u{1F4CD} Direcci\u00f3n del proyecto",addrPh:"Empieza a escribir la direcci\u00f3n\u2026",
+clientH:"\u{1F464} Nombre del cliente",clientPh:"Nombre del cliente",
 addrNote:"Toca una sugerencia para usarla. Sale en el PDF del estimado.",
 measH:"\u{1F4D0} Medidas",addSec:"\uFF0B Agregar otra secci\u00f3n",
 measNote:"Plataforma: largo \u00d7 ancho. Escalera: ancho \u00d7 n\u00ba de escalones. Barandales en pies lineales. En 0 o vac\u00edo no se calcula nada.",
@@ -293,6 +299,7 @@ appTitle:"Deck Calculator",
 priceNoteA:"Deck refacing \u00b7 List prices ",priceNoteB:" \u2014 Lowe's (composite), Menards (cedar & treated pine). Tap any price to adjust it; it's saved on your phone.",
 tabComposite:"Composite",tabCedar:"Cedar",tabPine:"Treated pine",
 addrH:"\u{1F4CD} Project address",addrPh:"Start typing the address\u2026",
+clientH:"\u{1F464} Client name",clientPh:"Client name",
 addrNote:"Tap a suggestion to use it. It appears on the estimate PDF.",
 measH:"\u{1F4D0} Measurements",addSec:"\uFF0B Add another section",
 measNote:"Deck: length \u00d7 width. Stairs: width \u00d7 number of steps. Rails in linear feet. 0 or empty calculates nothing.",
@@ -366,6 +373,7 @@ function applyLang(){
   $("priceNote").textContent=t("priceNoteA")+PD()+t("priceNoteB");
   S("tabBtnComposite","tabComposite"); S("tabBtnCedar","tabCedar"); S("tabBtnPine","tabPine");
   $("langEs").classList.toggle("on",lang==="es"); $("langEn").classList.toggle("on",lang==="en");
+  S("clientH","clientH"); $("clientInput").placeholder=t("clientPh");
   S("addrH","addrH"); $("addrInput").placeholder=t("addrPh"); S("addrNote","addrNote");
   S("measH","measH"); S("addSec","addSec"); S("measNote","measNote");
   S("sumH","sumH"); S("cmpH","cmpH"); S("matH","matH");
@@ -736,6 +744,11 @@ function initFees(){
 
 /* ================= Dirección (autocompletado) ================= */
 let addrTimer=null;
+function initClient(){
+  const inp=$("clientInput");
+  inp.value=state.client||"";
+  inp.addEventListener("input",()=>{ state.client=inp.value; save(); });
+}
 function initAddress(){
   const inp=$("addrInput"), list=$("addrList");
   inp.value=state.address||"";
@@ -790,6 +803,7 @@ function initButtons(){
     state.client="";
     state.taxManual=false; resolveTax(state);
     $("addrInput").value="";
+    $("clientInput").value="";
     $("addrList").classList.remove("show");
     save(); renderSections(); renderAll(true);
     toast(t("resetToast"));
@@ -858,7 +872,7 @@ function handoffBody(d){
   return lines.join("\n");
 }
 function openGabyModal(){
-  const gc=$("gabyClient"); if(gc&&!gc.value) gc.value=state.client||"";
+  const gc=$("gabyClient"); if(gc) gc.value=state.client||"";
   const d=buildHandoff();
   $("gabySum").innerHTML=
     (d.address?escHtml(d.address)+" · ":"")+
@@ -870,6 +884,7 @@ function sendGabyMail(){
   const d=buildHandoff();
   if(!d.client){toast(t("gabyNeedClient")); const gc=$("gabyClient"); if(gc) gc.focus(); return;}
   state.client=d.client; save();
+  const ci=$("clientInput"); if(ci) ci.value=state.client;
   const href="mailto:"+GABY_MAIL+"?subject="+encodeURIComponent(handoffSubject(d))+"&body="+encodeURIComponent(handoffBody(d));
   toast(t("gabyMailOpen"));
   const a=document.createElement("a");a.href=href;a.style.display="none";
@@ -878,7 +893,7 @@ function sendGabyMail(){
 }
 function copyGabyText(){
   const d=buildHandoff();
-  if(d.client){state.client=d.client; save();}
+  if(d.client){state.client=d.client; save(); const ci=$("clientInput"); if(ci) ci.value=state.client;}
   const txt=handoffSubject(d)+"\n\n"+handoffBody(d);
   const done=()=>toast(t("gabyHandoffCopied"));
   if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done).catch(()=>fallbackCopy(txt,done));}
@@ -1087,7 +1102,7 @@ async function sharePdf(){
 
 /* ================= Inicio ================= */
 renderSections();
-initAddress();
+initAddress(); initClient();
 initButtons();
 initFees();
 applyLang();
