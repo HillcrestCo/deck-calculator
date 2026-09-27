@@ -352,35 +352,35 @@ const LS_KEY="deckCalc9", LS_LEGACY="deckCalc7";
 
 // COMPUESTO (Lowe's / Trex): las secciones de barandal SE COMPRAN (kits)
 const LIST_COMP=[
-  {id:"deck",   name:"Tablas Trex Enhance 12' ranurada <span class='wtag'>plataforma + huellas de escalera</span>", short:"Tablas Trex 12'", waste:"15%"},
-  {id:"fascia", name:"Fascia Trex 1×8×12' <span class='wtag'>cenefa + contrapasos</span>", short:"Fascia Trex 12'", waste:"15%"},
-  {id:"railKit",name:"Kit barandal Trex 6' <span class='wtag'>nivel, con balaustres</span>", short:"Kit barandal 6'", waste:"+1"},
-  {id:"stairKit",name:"Kit barandal Trex 6' <span class='wtag'>escalera</span>", short:"Kit escalera 6'", waste:"+1"},
-  {id:"sleeve", name:"Manga Trex 4×4 <span class='wtag'>cubre el poste de barandal</span>", short:"Manga 4×4", waste:"+1"},
-  {id:"ptPost", name:"Poste tratado 4×4×8' <span class='wtag'>va dentro de la manga (rinde 2)</span>", short:"PT 4×4×8'", waste:"+1"},
-  {id:"cap",    name:"Tapa Trex 4×4", short:"Tapa 4×4", waste:"+1"},
-  {id:"trim",   name:"Moldura base Trex 4×4", short:"Moldura base", waste:"+1"},
-  {id:"fast",   name:"Fijación oculta Trex <span class='wtag'>bote 360 pzas ≈ 200 ft²</span>", short:"Fijación oculta", waste:"+1"},
-  {id:"cortex", name:"Tornillos p/ fascia Trex <span class='wtag'>caja</span>", short:"Tornillos fascia", waste:"+1"},
+  {id:"deck",   name:B("Tablas Trex Enhance 12' ranurada <span class='wtag'>plataforma + huellas de escalera</span>","Trex Enhance 12' grooved boards <span class='wtag'>decking + stair treads</span>"), short:B("Tablas Trex 12'","Trex boards 12'"), waste:"15%"},
+  {id:"fascia", name:B("Fascia Trex 1×8×12' <span class='wtag'>cenefa + contrapasos</span>","Trex fascia 1×8×12' <span class='wtag'>rim + risers</span>"), short:B("Fascia Trex 12'","Trex fascia 12'"), waste:"15%"},
+  {id:"railKit",name:B("Kit barandal Trex 6' <span class='wtag'>nivel, con balaustres</span>","Trex rail kit 6' <span class='wtag'>level, with balusters</span>"), short:B("Kit barandal 6'","Rail kit 6'"), waste:"+1"},
+  {id:"stairKit",name:B("Kit barandal Trex 6' <span class='wtag'>escalera</span>","Trex rail kit 6' <span class='wtag'>stair</span>"), short:B("Kit escalera 6'","Stair kit 6'"), waste:"+1"},
+  {id:"sleeve", name:B("Manga Trex 4×4 <span class='wtag'>cubre el poste de barandal</span>","Trex sleeve 4×4 <span class='wtag'>covers the rail post</span>"), short:B("Manga 4×4","Sleeve 4×4"), waste:"+1"},
+  {id:"ptPost", name:B("Poste tratado 4×4×8' <span class='wtag'>va dentro de la manga (rinde 2)</span>","Treated post 4×4×8' <span class='wtag'>goes inside the sleeve (yields 2)</span>"), short:B("PT 4×4×8'","PT 4×4×8'"), waste:"+1"},
+  {id:"cap",    name:B("Tapa Trex 4×4","Trex cap 4×4"), short:B("Tapa 4×4","Cap 4×4"), waste:"+1"},
+  {id:"trim",   name:B("Moldura base Trex 4×4","Trex base trim 4×4"), short:B("Moldura base","Base trim"), waste:"+1"},
+  {id:"fast",   name:B("Fijación oculta Trex <span class='wtag'>bote 360 pzas ≈ 200 ft²</span>","Trex hidden fasteners <span class='wtag'>360-pc bucket ≈ 200 ft²</span>"), short:B("Fijación oculta","Hidden fasteners"), waste:"+1"},
+  {id:"cortex", name:B("Tornillos p/ fascia Trex <span class='wtag'>caja</span>","Trex fascia screws <span class='wtag'>box</span>"), short:B("Tornillos fascia","Fascia screws"), waste:"+1"},
 ];
 // MADERA (Menards): el barandal SE ARMA EN OBRA — misma lista para cedro y pino, distinto precio
 const LIST_WOOD=[
-  {id:"deck",    name:"Tablas 5/4×6×12' <span class='wtag'>plataforma + huellas de escalera</span>", short:"Tablas 5/4×6×12'", waste:"15%"},
-  {id:"fascia",  name:"Tablas 1×8×12' <span class='wtag'>cenefa + contrapasos</span>", short:"Tablas 1×8×12'", waste:"15%"},
-  {id:"rail24",  name:"Tablas 2×4×8' <span class='wtag'>riel superior + inferior + escalera</span>", short:"2×4×8' rieles", waste:"15%"},
-  {id:"baluster",name:"Balaustres 2×2×36'", short:"Balaustres 2×2×36'", waste:"10%"},
-  {id:"post",    name:"Postes 4×4×8' <span class='wtag'>barandal + escalera</span>", short:"Postes 4×4×8'", waste:"+1"},
-  {id:"cap",     name:"Tapas 4×4", short:"Tapas 4×4", waste:"+1"},
-  {id:"trim",    name:"Moldura base 4×4", short:"Moldura base", waste:"+1"},
-  {id:"screw25", name:"Tornillos 2½\" p/ deck <span class='wtag'>caja 5 lb ≈ 200 ft²</span>", short:"Tornillos 2½\"", waste:"+1"},
-  {id:"screw3",  name:"Tornillos 3\" p/ rieles <span class='wtag'>caja</span>", short:"Tornillos 3\"", waste:"+1"},
+  {id:"deck",    name:B("Tablas 5/4×6×12' <span class='wtag'>plataforma + huellas de escalera</span>","5/4×6×12' boards <span class='wtag'>decking + stair treads</span>"), short:B("Tablas 5/4×6×12'","5/4×6×12' boards"), waste:"15%"},
+  {id:"fascia",  name:B("Tablas 1×8×12' <span class='wtag'>cenefa + contrapasos</span>","1×8×12' boards <span class='wtag'>rim + risers</span>"), short:B("Tablas 1×8×12'","1×8×12' boards"), waste:"15%"},
+  {id:"rail24",  name:B("Tablas 2×4×8' <span class='wtag'>riel superior + inferior + escalera</span>","2×4×8' boards <span class='wtag'>top + bottom rail + stair</span>"), short:B("2×4×8' rieles","2×4×8' rails"), waste:"15%"},
+  {id:"baluster",name:B("Balaustres 2×2×36'","2×2×36\" balusters"), short:B("Balaustres 2×2×36'","2×2×36\" balusters"), waste:"10%"},
+  {id:"post",    name:B("Postes 4×4×8' <span class='wtag'>barandal + escalera</span>","4×4×8' posts <span class='wtag'>rail + stair</span>"), short:B("Postes 4×4×8'","4×4×8' posts"), waste:"+1"},
+  {id:"cap",     name:B("Tapas 4×4","Caps 4×4"), short:B("Tapas 4×4","Caps 4×4"), waste:"+1"},
+  {id:"trim",    name:B("Moldura base 4×4","Base trim 4×4"), short:B("Moldura base","Base trim"), waste:"+1"},
+  {id:"screw25", name:B("Tornillos 2½\" p/ deck <span class='wtag'>caja 5 lb ≈ 200 ft²</span>","2½\" deck screws <span class='wtag'>5 lb box ≈ 200 ft²</span>"), short:B("Tornillos 2½\"","2½\" screws"), waste:"+1"},
+  {id:"screw3",  name:B("Tornillos 3\" p/ rieles <span class='wtag'>caja</span>","3\" rail screws <span class='wtag'>box</span>"), short:B("Tornillos 3\"","3\" screws"), waste:"+1"},
 ];
 const listFor=matId=>matId==="composite"?LIST_COMP:LIST_WOOD;
 
 const MATS=[
-  {id:"composite", name:"Compuesto", store:"Lowe's"},
-  {id:"cedar",     name:"Cedro",     store:"Menards"},
-  {id:"pine",      name:"Pino tratado", store:"Menards"},
+  {id:"composite", name:B("Compuesto","Composite"), store:"Lowe's"},
+  {id:"cedar",     name:B("Cedro","Cedar"),     store:"Menards"},
+  {id:"pine",      name:B("Pino tratado","Treated pine"), store:"Menards"},
 ];
 
 // Precios base (null = por verificar en tienda). Se actualizan el día 1 de cada mes.
@@ -390,12 +390,12 @@ const PRICE_DEFAULTS={
   pine:{deck:9.87, fascia:13.65, rail24:6.03, baluster:1.67, post:10.48, cap:12.88, trim:5.19, screw25:29.97, screw3:29.97},
 };
 const PRICE_LABEL={
-  composite:{deck:"Trex Enhance 12' ranurada", fascia:"Trex fascia PVC blanca 1×12×12' (ref. — verificar color en tienda)", railKit:"Trex Select kit nivel 6'", stairKit:"Trex Select kit escalera 6'",
-    sleeve:"Trex manga 4×4 (4 ft)", ptPost:"Severe Weather 4×4×8'", cap:"Trex tapa 4×4", trim:"Trex moldura base 4×4", fast:"Trex bote 360 pzas", cortex:"Cortex p/ fascia (caja grande)"},
-  cedar:{deck:"Cedro 5/4×6×12'", fascia:"Cedro 1×8×12'", rail24:"Cedro 2×4×8'", baluster:"Cedro 2×2×36'",
-    post:"Cedro 4×4×8'", cap:"Mr. Spindle tapa cedro 4×4", trim:"Mr. Spindle moldura cedro 4×4", screw25:"Grip Fast 2½\" (5 lb)", screw3:"Grip Fast 3\" (5 lb)"},
-  pine:{deck:"AC2 5/4×6×12'", fascia:"Tratado 1×8×12'", rail24:"Tratado 2×4×8'", baluster:"Tratado 2×2×36'",
-    post:"AC2 4×4×8'", cap:"Tapa pirámide CedarTone 4×4", trim:"Mr. Spindle moldura tratada 4×4", screw25:"Grip Fast 2½\" (5 lb)", screw3:"Grip Fast 3\" (5 lb)"},
+  composite:{deck:B("Trex Enhance 12' ranurada","Trex Enhance 12' grooved"), fascia:B("Trex fascia PVC blanca 1×12×12' (ref. — verificar color en tienda)","Trex white PVC fascia 1×12×12' (ref. — verify color in store)"), railKit:B("Trex Select kit nivel 6'","Trex Select level kit 6'"), stairKit:B("Trex Select kit escalera 6'","Trex Select stair kit 6'"),
+    sleeve:B("Trex manga 4×4 (4 ft)","Trex sleeve 4×4 (4 ft)"), ptPost:"Severe Weather 4×4×8'", cap:B("Trex tapa 4×4","Trex cap 4×4"), trim:B("Trex moldura base 4×4","Trex base trim 4×4"), fast:B("Trex bote 360 pzas","Trex 360-pc bucket"), cortex:B("Cortex p/ fascia (caja grande)","Cortex for fascia (large box)")},
+  cedar:{deck:B("Cedro 5/4×6×12'","Cedar 5/4×6×12'"), fascia:B("Cedro 1×8×12'","Cedar 1×8×12'"), rail24:B("Cedro 2×4×8'","Cedar 2×4×8'"), baluster:B("Cedro 2×2×36'","Cedar 2×2×36'"),
+    post:B("Cedro 4×4×8'","Cedar 4×4×8'"), cap:B("Mr. Spindle tapa cedro 4×4","Mr. Spindle cedar cap 4×4"), trim:B("Mr. Spindle moldura cedro 4×4","Mr. Spindle cedar trim 4×4"), screw25:"Grip Fast 2½\" (5 lb)", screw3:"Grip Fast 3\" (5 lb)"},
+  pine:{deck:"AC2 5/4×6×12'", fascia:B("Tratado 1×8×12'","Treated 1×8×12'"), rail24:B("Tratado 2×4×8'","Treated 2×4×8'"), baluster:B("Tratado 2×2×36'","Treated 2×2×36'"),
+    post:"AC2 4×4×8'", cap:B("Tapa pirámide CedarTone 4×4","CedarTone pyramid cap 4×4"), trim:B("Mr. Spindle moldura tratada 4×4","Mr. Spindle treated trim 4×4"), screw25:"Grip Fast 2½\" (5 lb)", screw3:"Grip Fast 3\" (5 lb)"},
 };
 // Migración v9 → v10: conservar precios que el usuario ya había editado
 const PRICE_MIGRATE={
@@ -768,12 +768,6 @@ function buildEstimatePdf(){
   const addr=(state.address||"").trim();
   const QC=q.comp, QW=q.wood;
   const QQ=id=>id==="composite"?QC:QW;
-  const GROUPS={
-    composite:[["Tablas + fascia",["deck","fascia"]],["Kits de barandal",["railKit","stairKit"]],
-               ["Mangas, postes, tapas",["sleeve","ptPost","cap","trim"]],["Fijación",["fast","cortex"]]],
-    wood:[["Tablas + fascia",["deck","fascia"]],["Rieles + balaustres",["rail24","baluster"]],
-          ["Postes y tapas",["post","cap","trim"]],["Tornillos",["screw25","screw3"]]]
-  };
   const gsub=(matId,ids)=>ids.reduce((a,id)=>a+QQ(matId)[id].buy*(state.prices[matId][id]||0),0);
 
   // ===== Página 1: tres opciones =====
