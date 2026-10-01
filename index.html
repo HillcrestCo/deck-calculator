@@ -400,8 +400,8 @@ const LOGO_JPG_B64="/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAUEBAQEAwUEBAQGBQUGCA0ICAcH
 const LOGO_BIN=atob(LOGO_JPG_B64); // bytes Latin-1 del JPEG, 1 char = 1 byte
 
 /* ================= Datos ================= */
-const PRICE_DATE="27 sep 2026";
-const PRICE_DATE_EN="Sep 27 2026"; // gemelo en inglés — el cron mensual actualiza ambas
+const PRICE_DATE="1 oct 2026";
+const PRICE_DATE_EN="Oct 1 2026"; // gemelo en inglés — el cron mensual actualiza ambas
 // Tasa de impuesto sobre ventas por ciudad (verificado sep 2026). Editable en la app.
 const CITY_TAX={burnsville:8.375, eagan:8.125, minneapolis:9.025, "saint paul":9.875, "st paul":9.875,
   "eden prairie":8.525, minnetonka:8.525, plymouth:8.525, corcoran:8.525, "maple grove":9.025};
@@ -443,9 +443,9 @@ const MATS=[
 
 // Precios base (null = por verificar en tienda). Se actualizan el día 1 de cada mes.
 const PRICE_DEFAULTS={
-  composite:{deck:18.00, fascia:64.88, railKit:182.97, stairKit:145.84, sleeve:44.98, ptPost:10.78, cap:12.98, trim:6.98, fast:149.00, cortex:99.98},
-  cedar:{deck:29.38, fascia:40.98, rail24:11.38, baluster:2.89, post:41.99, cap:8.99, trim:9.99, screw25:29.97, screw3:29.97},
-  pine:{deck:9.87, fascia:13.65, rail24:6.03, baluster:1.67, post:10.48, cap:12.88, trim:5.19, screw25:29.97, screw3:29.97},
+  composite:{deck:18.00, fascia:null, railKit:150.08, stairKit:null, sleeve:null, ptPost:null, cap:null, trim:null, fast:null, cortex:null},
+  cedar:{deck:null, fascia:null, rail24:null, baluster:null, post:null, cap:null, trim:null, screw25:29.97, screw3:null},
+  pine:{deck:9.87, fascia:null, rail24:4.71, baluster:null, post:10.44, cap:null, trim:null, screw25:29.97, screw3:null},
 };
 const PRICE_LABEL={
   composite:{deck:B("Trex Enhance 12' ranurada","Trex Enhance 12' grooved"), fascia:B("Trex fascia PVC blanca 1×12×12' (ref. — verificar color en tienda)","Trex white PVC fascia 1×12×12' (ref. — verify color in store)"), railKit:B("Trex Select kit nivel 6'","Trex Select level kit 6'"), stairKit:B("Trex Select kit escalera 6'","Trex Select stair kit 6'"),
